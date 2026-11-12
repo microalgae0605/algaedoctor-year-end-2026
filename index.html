@@ -21,6 +21,7 @@
 .gift-note .gift-eyebrow{font:800 10px sans-serif;letter-spacing:.15em;color:#b65670}.gift-note h2{font-size:clamp(24px,3vw,34px);margin:8px 0}.gift-note p{font-size:14px;line-height:1.7;color:#66595e}.gift-note .gift-star{margin-left:auto;font-size:48px;color:#e9a6b7}.example-link{display:inline-flex;gap:12px;align-items:center;margin-top:16px;padding:11px 15px;border:1px solid #93b48c;border-radius:8px;font-weight:bold;font-size:13px;color:#466c50;text-decoration:none}.example-link:hover{background:#edf4e3}.photo-example-link{display:inline-block;margin-top:10px;color:#587b59;font-size:13px;font-weight:bold;text-underline-offset:4px}
 @media(max-width:720px){.gift-note{width:calc(100% - 36px);margin:46px auto -28px;padding:22px;align-items:flex-start;gap:15px}.gift-icon{width:44px;height:44px;font-size:21px}.gift-note h2{font-size:23px}.gift-note p{font-size:13px}.gift-note .gift-star{display:none}}
 
+.survey-group{margin:34px 0 0;padding:19px 20px;border-radius:12px;background:#edf4e5;border-left:4px solid #91bc84}.survey-group small{display:block;color:#668966;font:800 10px sans-serif;letter-spacing:.13em;margin-bottom:7px}.survey-group h3{font:22px 'Jua',sans-serif;color:#1b2b43;margin:0 0 7px}.survey-group p{font-size:13px;line-height:1.7;color:#5b7061;margin:0}.survey-item+.survey-group{margin-top:34px}@media(max-width:720px){.survey-group{padding:17px}.survey-group h3{font-size:20px}}
 </style>
 </head>
 <body>
@@ -37,13 +38,19 @@
 <section id="rsvp" class="rsvp shell"><div class="rsvp-head"><div><span class="section-kicker">BEFORE WE MEET</span><h2>만나기 전,<br>조금만 알려주세요<span class="pink">!</span></h2><p>함께하는 분들을 더 잘 알 수 있도록<br>아래 문항을 작성해주세요.</p></div><div class="rsvp-star">✳</div></div>
 <form class="survey" id="survey-form">
   <div class="survey-intro"><span>HELLO, NICE TO MEET YOU</span><p>편한 마음으로 작성해주세요 ✳</p><a class="example-link" href="intro-example.html">자기소개는 어떻게 보이나요? <span>예시 보기 ↗</span></a></div>
+  <div class="survey-group"><small>01 · ABOUT YOU</small><h3>먼저, 누구신가요?</h3><p>답변을 보내주신 분을 알아볼 수 있도록 성함을 알려주세요.</p></div>
   <div class="survey-item"><label for="guest-name"><span class="survey-num">01</span> 성함을 알려주세요</label><input id="guest-name" name="name" autocomplete="name" required maxlength="100" placeholder="이름을 입력해주세요"></div>
-  <fieldset class="survey-item"><legend><span class="survey-num">02</span> 자기소개를 해보고 싶으신가요?</legend><p>지원자 수에 따라 자기소개 방식과 길이는 달라질 예정이에요.</p><div class="choices"><label><input type="radio" name="presentation" value="yes"> 자기소개 할래요!</label><label><input type="radio" name="presentation" value="no"> 자기소개 안 할래요</label></div></fieldset>
-  <div class="survey-item"><label for="intro"><span class="survey-num">03</span> 나를 소개해주세요</label><p>서로를 미리 알아볼 수 있도록 소개 페이지를 만들어 공유할 예정이에요. 길게 적어도 좋아요.</p><textarea id="intro" name="intro" rows="5" placeholder="어떤 분인지 자유롭게 들려주세요"></textarea></div>
+  <div class="survey-group"><small>02 · ON STAGE</small><h3>현장에서 나를 소개하기</h3><p>모임에서 직접 자기소개하고 싶은 분들을 위해 준비해요. 소개 방식과 시간은 지원자 수에 맞춰 정할 예정이에요.</p></div>
+  <fieldset class="survey-item"><legend><span class="survey-num">02</span> 자기소개를 해보고 싶으신가요?</legend><p>희망 여부를 선택해주세요.</p><div class="choices"><label><input type="radio" name="presentation" value="yes"> 자기소개 할래요!</label><label><input type="radio" name="presentation" value="no"> 자기소개 안 할래요</label></div></fieldset>
+  <div class="survey-group"><small>03 · MEET EACH OTHER</small><h3>만나기 전, 서로 알아가기</h3><p>참가자들이 서로를 미리 알아볼 수 있도록 소개 페이지를 만들 예정이에요. 소개글과 사진을 편하게 보내주세요.</p></div>
+  <div class="survey-item"><label for="intro"><span class="survey-num">03</span> 나를 소개해주세요</label><p>어떤 일을 하고 무엇에 관심이 있는지 자유롭게 들려주세요. 길게 적어도 좋아요.</p><textarea id="intro" name="intro" rows="5" placeholder="어떤 분인지 자유롭게 들려주세요"></textarea></div>
   <div class="survey-item"><label for="document"><span class="survey-num">03-1</span> 소개 파일 첨부</label><p>한글이나 워드로 준비하셨다면 첨부해주세요. 파일 1개, 최대 5MB.</p><input id="document" name="document" type="file" accept=".hwp,.hwpx,.doc,.docx"></div>
   <div class="survey-item"><label for="photo"><span class="survey-num">04</span> 나를 나타내는 사진</label><p>얼굴, 캐릭터, 좋아하는 장면, 일하는 현장 등 어떤 사진이든 좋아요. 파일 1개, 최대 5MB.</p><input id="photo" name="photo" type="file" accept=".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif"><a class="photo-example-link" href="intro-example.html">사진과 소개글 예시 보기 ↗</a></div>
+  <div class="survey-group"><small>04 · ARRIVAL</small><h3>도착 시간 알려주기</h3><p>모임 진행을 준비하는 데 참고할게요.</p></div>
   <div class="survey-item"><label for="arrival"><span class="survey-num">05</span> 몇 시쯤 도착하시나요?</label><p>대략적인 예상 도착 시간만 알려주세요.</p><input id="arrival" name="arrival" placeholder="예: 저녁 7시 30분"></div>
+  <div class="survey-group"><small>05 · FOOD</small><h3>편안한 식사를 위해</h3><p>모두가 편하게 식사할 수 있도록 메뉴를 준비하는 데 참고할게요.</p></div>
   <fieldset class="survey-item"><legend><span class="survey-num">06</span> 식사 선호를 알려주세요</legend><div class="choices"><label><input type="radio" name="meal" value="vegan"> 비건 메뉴만 먹을 수 있어요</label><label><input type="radio" name="meal" value="any"> 고기가 있어도 괜찮아요</label></div></fieldset>
+  <div class="survey-group"><small>06 · CONVERSATION</small><h3>김익수 대표님과 식사하며 대화하기</h3><p>환경일보 김익수 대표님과 이야기를 나누고 싶은 분들을 위해 식사 자리를 준비해요.</p></div>
   <fieldset class="survey-item"><legend><span class="survey-num">07</span> 김익수 대표님과 함께 식사하며 대화하고 싶으신가요?</legend><p>대화를 원하시는 분들이 돌아가며 환경일보 김익수 대표님과 함께 식사하고 이야기할 예정이에요.</p><div class="choices"><label><input type="radio" name="conversation" value="yes"> 함께 이야기하고 싶어요</label><label><input type="radio" name="conversation" value="no"> 같은 테이블에서 식사하지 않아도 돼요</label></div></fieldset>
   <p class="survey-privacy">보내주신 답변과 파일은 모임 준비를 위해 사용하며, 소개글과 사진은 참가자 소개 페이지에 공유될 수 있어요.</p>
   <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
