@@ -10,6 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+.draft-note{max-width:760px;margin:36px auto 0;padding:18px 22px;text-align:left;line-height:1.7;background:#fff0d4;border-radius:12px;font-size:14px}.draft-note a{text-underline-offset:3px;font-weight:bold}.survey{max-width:760px;margin:20px auto 0;text-align:left;background:#fffdf7;border:1px solid #e8e8d8;border-radius:20px;padding:clamp(22px,5vw,50px);box-shadow:0 12px 36px #1827400a}.survey-intro{border-bottom:1px solid #e9ecdf;padding-bottom:24px}.survey-intro span{font:800 11px sans-serif;letter-spacing:.14em;color:#8aaf7b}.survey-intro p{font-size:15px;margin-top:8px;color:#69776d}.survey-item{display:block;border:0;border-bottom:1px solid #e9ecdf;margin:0;padding:28px 0;width:100%;min-width:0}.survey-item legend,.survey-item>label{font-family:'Jua','Malgun Gothic',sans-serif;color:#1b2b43;font-size:20px;line-height:1.4}.survey-item legend{padding:0;float:left;width:100%}.survey-item legend+*{clear:both}.survey-num{display:inline-block;margin-right:12px;color:#91bd84;font:800 12px sans-serif;letter-spacing:.1em}.survey-item p{font-size:13px;color:#78867e;line-height:1.7;margin:10px 0 14px}.survey-item input:not([type=radio]),.survey-item textarea{display:block;width:100%;padding:14px 16px;margin-top:14px;background:#f7f8ef;border:1px solid #e2e8d9;border-radius:8px;font:15px 'Gowun Dodum',sans-serif;color:#1b2b43}.survey-item input[type=file]{font-size:13px}.survey-item input:focus-visible,.survey-item textarea:focus-visible{outline:2px solid #83b976;outline-offset:2px}.choices{display:flex;flex-wrap:wrap;gap:10px;padding-top:16px;clear:both}.choices label{display:flex;align-items:center;gap:8px;border:1px solid #dce6d6;border-radius:9px;padding:12px 14px;color:#43544d;font-size:14px;cursor:pointer}.choices input{accent-color:#76af74}.submit-draft{margin-top:30px;border:0;opacity:.5;cursor:not-allowed}.survey-item textarea{resize:vertical}@media(max-width:720px){.survey{padding:25px 20px}.survey-item legend,.survey-item>label{font-size:18px}.choices{flex-direction:column}.choices label{width:100%}}
+.survey-privacy,.survey-status{font-size:13px;line-height:1.7;color:#65766c;margin-top:22px}.survey-status{font-weight:bold;color:#315e43}.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.survey-submit{border:0;margin-top:28px;cursor:pointer}.survey-submit:disabled{opacity:.55;cursor:wait}
+
+</style>
 </head>
 <body>
   <header class="topbar"><a class="logo" href="#top"><span class="logo-dot">✳</span> ALGAE DOCTOR <small>2026</small></a><a class="top-link" href="#rsvp">모임 설문하기 <span>↗</span></a></header>
@@ -21,7 +27,91 @@
     <div class="ticker" aria-hidden="true"><div>HAPPY BIRTHDAY ✳ HAPPY YEAR-END ✳ NICE TO MEET YOU ✳ HAPPY BIRTHDAY ✳ HAPPY YEAR-END ✳ NICE TO MEET YOU ✳</div></div>
     <section class="details shell" id="details"><div class="section-heading"><div><span class="section-kicker">SAVE THE DATE</span><h2>우리, 이때 만나요<span class="pink">!</span></h2></div><p>반가운 얼굴도 새로운 인연도<br>모두 환영해요.</p></div><div class="detail-grid"><article class="detail-card date-card"><span class="card-label">WHEN / 언제</span><div class="date-big">11<span>.</span>27 <small>FRI</small></div><p>2026년 11월 27일 금요일<br><strong>저녁 7시</strong></p><span class="card-art">✳</span></article><article class="detail-card place-card"><span class="card-label">WHERE / 어디서</span><h3>풀문라운자 <small>2층</small></h3><p>서울 성북구 화랑로18길 25<br>상월곡역 4번 출구에서 도보 약 3분</p><a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%ED%99%94%EB%9E%91%EB%A1%9C18%EA%B8%B8%2025" target="_blank" rel="noopener noreferrer">지도에서 길 찾기 ↗</a><span class="place-icon">⌁</span></article></div></section>
     <section class="story"><div class="shell story-inner"><div class="story-mark">✹<br><span>LET'S<br>CONNECT</span></div><div><span class="section-kicker">MORE THAN A PARTY</span><h2>함께여서 더<br>재미있는 연말</h2><p>생일을 축하하려고 모이다 보니 어느새 연말모임이 되었어요. 서로 어떤 사람인지 알아가고, 하고 싶은 이야기도 나눠봐요.</p><div class="story-tags"><span>✦ 새로운 만남</span><span>✦ 자기소개</span><span>✦ 맛있는 식사</span></div></div></div></section>
-    <section id="rsvp" class="rsvp shell"><div class="rsvp-head"><div><span class="section-kicker">BEFORE WE MEET</span><h2>만나기 전,<br>조금만 알려주세요<span class="pink">!</span></h2><p>편안하고 즐거운 모임을 준비할 수 있도록<br>구글 설문에 참여해주세요.</p></div><div class="rsvp-star">✳</div></div><div class="questions"><div><span>01</span><h3>자기소개</h3><p>소개글과 나를 보여주는 사진을 나눠주세요. 3분 자기소개 발표도 신청할 수 있어요.</p></div><div><span>02</span><h3>도착 시간과 식사</h3><p>대략적인 도착 시간과 비건 메뉴 선호를 알려주세요.</p></div><div><span>03</span><h3>함께 나눌 대화</h3><p>환경일보 김익수 대표님과의 식사·대화 참여 의사도 확인해요.</p></div></div><a class="button primary rsvp-button" href="https://docs.google.com/forms/d/1cHQbwPoE82o8QuBbVpuP72ic4NMvm8N52nbGlLa0958/viewform" target="_blank" rel="noopener noreferrer">설문 참여하기 <span>↗</span></a><p class="form-note">Google 설문지에서 작성합니다. 파일 업로드에는 Google 계정이 필요할 수 있어요.</p></section>
+<section id="rsvp" class="rsvp shell"><div class="rsvp-head"><div><span class="section-kicker">BEFORE WE MEET</span><h2>만나기 전,<br>조금만 알려주세요<span class="pink">!</span></h2><p>함께하는 분들을 더 잘 알 수 있도록<br>아래 문항을 작성해주세요.</p></div><div class="rsvp-star">✳</div></div>
+<form class="survey" id="survey-form">
+  <div class="survey-intro"><span>HELLO, NICE TO MEET YOU</span><p>편한 마음으로 작성해주세요 ✳</p></div>
+  <div class="survey-item"><label for="guest-name"><span class="survey-num">01</span> 성함을 알려주세요</label><input id="guest-name" name="name" autocomplete="name" required maxlength="100" placeholder="이름을 입력해주세요"></div>
+  <fieldset class="survey-item"><legend><span class="survey-num">02</span> 3분 자기소개를 해보고 싶으신가요?</legend><p>빔 프로젝터가 준비돼 있어요. 발표하신다면 PPT를 준비해주세요.</p><div class="choices"><label><input type="radio" name="presentation" value="yes"> 자기소개 할래요!</label><label><input type="radio" name="presentation" value="no"> 자기소개 안 할래요</label></div></fieldset>
+  <div class="survey-item"><label for="intro"><span class="survey-num">03</span> 나를 소개해주세요</label><p>서로를 미리 알아볼 수 있도록 소개 페이지를 만들어 공유할 예정이에요. 길게 적어도 좋아요.</p><textarea id="intro" name="intro" rows="5" placeholder="어떤 분인지 자유롭게 들려주세요"></textarea></div>
+  <div class="survey-item"><label for="document"><span class="survey-num">03-1</span> 소개 파일 첨부</label><p>한글이나 워드로 준비하셨다면 첨부해주세요. 파일 1개, 최대 5MB.</p><input id="document" name="document" type="file" accept=".hwp,.hwpx,.doc,.docx"></div>
+  <div class="survey-item"><label for="photo"><span class="survey-num">04</span> 나를 나타내는 사진</label><p>얼굴, 캐릭터, 좋아하는 장면, 일하는 현장 등 어떤 사진이든 좋아요. 파일 1개, 최대 5MB.</p><input id="photo" name="photo" type="file" accept=".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif"></div>
+  <div class="survey-item"><label for="arrival"><span class="survey-num">05</span> 몇 시쯤 도착하시나요?</label><p>대략적인 시간을 알려주세요. 더 일찍 오거나 늦게 와도 괜찮아요.</p><input id="arrival" name="arrival" placeholder="예: 저녁 7시 30분"></div>
+  <fieldset class="survey-item"><legend><span class="survey-num">06</span> 식사 선호를 알려주세요</legend><div class="choices"><label><input type="radio" name="meal" value="vegan"> 비건 메뉴만 먹을 수 있어요</label><label><input type="radio" name="meal" value="any"> 고기가 있어도 괜찮아요</label></div></fieldset>
+  <fieldset class="survey-item"><legend><span class="survey-num">07</span> 김익수 대표님과 함께 식사하며 대화하고 싶으신가요?</legend><p>대화를 원하는 분들과 환경일보 김익수 대표님이 돌아가며 함께 식사하고 이야기할 예정이에요.</p><div class="choices"><label><input type="radio" name="conversation" value="yes"> 함께 이야기하고 싶어요</label><label><input type="radio" name="conversation" value="no"> 같은 테이블에서 식사하지 않아도 돼요</label></div></fieldset>
+  <p class="survey-privacy">보내주신 답변과 파일은 모임 준비를 위해 사용하며, 소개글과 사진은 참가자 소개 페이지에 공유될 수 있어요.</p>
+  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button class="button primary survey-submit" type="submit">답변 보내기 <span>↗</span></button><p class="survey-status" role="status" aria-live="polite"></p>
+</form></section>
+
     <section class="last"><span>SEE YOU SOON</span><h2>우리, 그날 만나요<span>!</span></h2><p>2026. 11. 27 FRI · 19:00</p><div>✳ &nbsp; ✦ &nbsp; ✳</div></section>
   </main><footer><span>ALGAE DOCTOR ✳ 2026</span><a href="#top">맨 위로 ↑</a></footer>
+<script>
+/* The live endpoint is filled in only after the owner authorizes the app. */
+const SURVEY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyxe6yL-OraJWx9wIoxw73s2X1NmEUCJbNVIx7l1rkoIXgfqvYIwPMCseM7DfuCNoK4/exec';
+const form = document.querySelector('#survey-form');
+const button = form.querySelector('[type="submit"]');
+const statusText = form.querySelector('.survey-status');
+const answerOptions = {
+  presentation:{yes:'자기소개 할래요!',no:'자기소개 안할래요'},
+  meal:{vegan:'비건 메뉴만 먹을 수 있어요.',any:'고기가 있어도 상관 없어요.'},
+  conversation:{yes:'김익수 대표님과 식사하며, 이야기를 싶습니다.',no:'꼭 같은 테이블에서 함께 식사하지 않아도 됩니다.'}
+};
+let requestId = crypto.randomUUID();
+function fileData(input) {
+  const file = input.files[0];
+  if (!file) return Promise.resolve(null);
+  if (file.size > 5 * 1024 * 1024) return Promise.reject(new Error('첨부파일은 각각 5MB 이하여야 해요.'));
+  return new Promise((resolve,reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error('파일을 읽지 못했어요. 다시 선택해주세요.'));
+    reader.onload = () => resolve({name:file.name, base64:String(reader.result).split(',')[1]});
+    reader.readAsDataURL(file);
+  });
+}
+function checkStatus(id) {
+  return new Promise(resolve => {
+    const callback = 'surveyStatus_' + crypto.randomUUID().replaceAll('-','_');
+    const script = document.createElement('script');
+    const timer = setTimeout(() => done(false), 8000);
+    function done(value) { clearTimeout(timer); script.remove(); delete window[callback]; resolve(value); }
+    window[callback] = data => done(Boolean(data && data.ok));
+    script.onerror = () => done(false);
+    const url = new URL(SURVEY_ENDPOINT);
+    url.searchParams.set('id', id);
+    url.searchParams.set('callback', callback);
+    script.src = url.href;
+    document.head.append(script);
+  });
+}
+const pause = ms => new Promise(resolve => setTimeout(resolve,ms));
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (!SURVEY_ENDPOINT || !form.reportValidity()) return;
+  button.disabled = true;
+  statusText.textContent = '답변을 보내고 있어요. 창을 닫지 말아주세요.';
+  try {
+    const values = new FormData(form);
+    const [documentFile,photoFile] = await Promise.all([fileData(form.elements.document),fileData(form.elements.photo)]);
+    const payload = {
+      requestId, name:String(values.get('name')||'').trim(), intro:String(values.get('intro')||'').trim(),
+      arrival:String(values.get('arrival')||'').trim(), website:String(values.get('website')||''),
+      presentation:answerOptions.presentation[values.get('presentation')]||'',
+      meal:answerOptions.meal[values.get('meal')]||'',
+      conversation:answerOptions.conversation[values.get('conversation')]||'',
+      document:documentFile, photo:photoFile
+    };
+    if (!payload.name) throw new Error('성함을 입력해주세요.');
+    const response = await fetch(SURVEY_ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload)});
+    let confirmed = false;
+    for (let i=0;i<12 && !confirmed;i++) { await pause(3000); confirmed = await checkStatus(requestId); }
+    if (!confirmed) throw new Error('저장 여부를 확인하지 못했어요. 같은 내용을 다시 보내면 중복 접수를 막도록 확인합니다.');
+    statusText.textContent = '답변이 안전하게 접수됐어요. 모임에서 만나요!';
+    form.reset();
+    requestId = crypto.randomUUID();
+  } catch (error) {
+    statusText.textContent = error.message || '전송하지 못했어요. 잠시 후 다시 시도해주세요.';
+  } finally { button.disabled = false; }
+});
+
+</script>
 </body></html>
