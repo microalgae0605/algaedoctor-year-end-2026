@@ -85,7 +85,7 @@ footer{font-size:13px;color:var(--ink-soft)}
   <header>
     <p class="eyebrow">NICE TO MEET YOU</p>
     <h1>2026 연말모임에서<br><em>만날 사람들</em></h1>
-    <p class="lede">미리 보내주신 소개글을 모았어요. 11월 27일 금요일 저녁 7시, 얼굴 보기 전에 한 분씩 먼저 만나보세요.</p>
+    <p class="lede">함께하는 52명 중 미리 보내주신 소개글을 모았어요. 11월 27일 금요일 저녁 7시, 얼굴 보기 전에 한 분씩 먼저 만나보세요.</p>
   </header>
 
   <div class="tools">
@@ -101,7 +101,7 @@ footer{font-size:13px;color:var(--ink-soft)}
 
   <section class="waiting" aria-labelledby="waiting-h">
     <h2 id="waiting-h">소개글은 현장에서 들을게요</h2>
-    <p>함께하시지만 아직 소개글을 보내지 않은 분들이에요.</p>
+    <p id="waiting-note">함께하는 52명 중 아직 소개글을 보내지 않은 37분이에요.</p>
     <ul class="chips" id="waiting"></ul>
   </section>
 
@@ -122,17 +122,20 @@ const PEOPLE = [
   { name: '코코아', alias: '신민아', avatar: '코코아', intro: '안녕하세요! 오전에는 직장인, 밤에는 크리에이터, 새벽에는 비영리단체 단장으로 살아가고 있는 코코아입니다. 저는 대학에서 실용음악, 상담심리학, 경영학을 전공하였고 과거에는 대한민국국가대표선수협회 홍보대사로 활동하며 선한 영향력의 가치를 배웠습니다. 현재는 더 많은 청년들과 함께 따뜻한 변화를 만들고자 청년 봉사 단체 ONDO(온도)를 설립해 단장을 맡고 있으며 @ondo_volunteer 행정안전부 소속 한국사회공헌협회에서 사회적 인플루언서 운영위원이자 쓰레기를 줍고 달리는 PICK & RUN 1.5℃ 캠페인도 총괄하고 있습니다. 비록 작은 걸음일지라도 제가 가진 능력 안에서 세상을 긍정적으로 변화시키고자 끊임없이 노력하고 있습니다. 이렇게 뜻깊은 자리에 초대해 주신 덕원님 진심으로 감사드립니다.' },
   { name: '김현우', intro: '공학석사, 반도체 연구원 이었던 것.' },
   { name: '옥지선', intro: '바이오 생명과학 분야에서 PM직을 맡았고 현재는 이직 준비 중입니다 현재 운동과 영어 공부에 관심을 두고 열심히 하고 있어요' },
-  { name: '장윤아', intro: '안녕하세요! 현재는 싱가포르 취업 및 국내 기업의 법무직무로 이직을 준비하고 있어요. 동호님과는 동대문구 탄소중립 지원센터에서 연구원으로 일 할 때 알게 되었습니다. 테니스, 러닝, 등산을 좋아하는 INFJ이고 E가 되기 위해 늘 노력 중입니다 :) 좋은 분들이 많이 모인 자리에서 가치 있는 네트워킹 인연을 만들 수 있으면 좋겠어요. 제 링크드인에 방문하셔서 1촌도 맺어요! ➡️ www.linkedin.com/in/yoonajang0520 모두 환영합니다!' },
   { name: '이정훈', intro: '안녕하세요 건국대학교 사회환경공학부 3학년에 재학중인 이정훈입니다. 현재 건국대학교 중앙환경동아리 CES 부회장으로 활동하고 있으며, 다양한 제로웨이스트, 에너지절감 활동을 통해 캠퍼스를 넘어 지역사회의 환경문제를 개선하기 위해 발로 뛰고 있습니다. 특히, 에너지 절감 문제에 관심이 많아 교내 전력절감플랫폼을 개발 및 운영하며, 모두의 창업 2R 진출 성과를 이루고, 청년이 탄탄한 서울 프로젝트에서 전력절감 및 제로웨이스트 활동을 통해 서울시장상을 2년연속 수상하였습니다. 환경과 토목에 관심이 많은 저로서, 세상을 바꿔나가고 싶은 것이 참으로 많습니다. 여러분과 함께 네트워킹하고, 문제들을 이끌어내면서 그 첫걸음을 함께 해보고 싶습니다. 감사합니다.' },
   { name: '구지민', alias: '구희', intro: '안녕하세요 구희(구지민)입니다. <기후위기인간>이라는 만화를 그리고 출판했어요. 강연도 나가고, 삽화 그리는 일도 하는 프리랜서입니다 :)' },
   { name: '이주호', intro: '고려대학교 환경생태공학과 박사과정생 이주호 입니다. 환경과 조경에 대한 관심을 갖고 있고 중견엔지니어링에서 3년정도 실무를 하다가 올해 초 고려대학교 박사과정으로 입학하게 되었습니다 ㅎㅎ 현재는 그린인프라계획 연구실에서 기후, 탄소, 폭염, 생물다양성과 같은 다양한 R&D와 프로젝트를 수행하고 있습니다. 잘부탁드려요.' },
   { name: '원종준', intro: '지구를 지키는 배움터 대표 원종준입니다.' },
 ];
-const WAITING = ['조용준', '정진', '한창기'];
+// everyone else on the confirmed participant list (52 people), in the list's order
+const WAITING = ['이동호', '김덕원', '김익수', '김소윤', '임정섭', '곽희도', '정원석', '김민하', '장우진', '조용준', '하지은', '한준규',
+  '이우일', '송인하', '이재은', '차효일', '신동빈', '이나연', '성무준', '김민건', '정동영', '김가영', '이주렬', '남예지', '박동영',
+  '김재철', '한창기', '황혜진', '정진', '이유정', '김현태', '이효선', '박다한', '소현호', '김현우', '김광환', '박진영'];
+const TOTAL = PEOPLE.length + WAITING.length;
 // photos sent with the survey (only people who attached one), shrunk to 480px wide
 const PHOTOS = {
   '조현명': ['johm', 640], '조재훈': ['jojh', 535], '심선희': ['simsh', 341], '한성민': ['hansm', 640], '코코아': ['cocoa', 640],
-  '김현우': ['kimhw', 320], '장윤아': ['jangya', 640], '이정훈': ['leejh', 571], '구지민': ['gujm', 500], '이주호': ['leejuho', 347],
+  '김현우': ['kimhw', 320], '이정훈': ['leejh', 571], '구지민': ['gujm', 500], '이주호': ['leejuho', 347],
 };
 
 const TINTS = ['var(--sage-soft)', 'var(--peach)', 'var(--sky)', 'var(--butter)', 'var(--rose)'];
@@ -183,13 +186,14 @@ function apply() {
     if (hit) shown++;
   }
   grid.classList.toggle('searching', !!t);
-  count.textContent = t ? `${PEOPLE.length}명 중 ${shown}명` : `소개글 ${PEOPLE.length}명`;
+  count.textContent = t ? `소개글 ${PEOPLE.length}개 중 ${shown}개` : `참가자 ${TOTAL}명 · 소개글 ${PEOPLE.length}명`;
   empty.hidden = shown > 0;
 }
 q.addEventListener('input', apply);
 apply();
 
 document.getElementById('waiting').innerHTML = WAITING.map(n => `<li>${esc(n)}</li>`).join('');
+document.getElementById('waiting-note').textContent = `함께하는 ${TOTAL}명 중 아직 소개글을 보내지 않은 ${WAITING.length}분이에요.`;
 })();
 </script>
 
