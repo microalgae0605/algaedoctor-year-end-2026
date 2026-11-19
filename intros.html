@@ -101,7 +101,7 @@ footer{font-size:13px;color:var(--ink-soft)}
 
   <section class="waiting" aria-labelledby="waiting-h">
     <h2 id="waiting-h">소개글은 현장에서 들을게요</h2>
-    <p id="waiting-note">함께하는 52명 중 아직 소개글을 보내지 않은 37분이에요.</p>
+    <p id="waiting-note">함께하는 52명 중 아직 소개글을 보내지 않은 분들이에요.</p>
     <ul class="chips" id="waiting"></ul>
   </section>
 
@@ -128,10 +128,10 @@ const PEOPLE = [
   { name: '원종준', intro: '지구를 지키는 배움터 대표 원종준입니다.' },
 ];
 // everyone else on the confirmed participant list (52 people), in the list's order
-const WAITING = ['이동호', '김덕원', '김익수', '김소윤', '임정섭', '곽희도', '정원석', '김민하', '장우진', '조용준', '하지은', '한준규',
+const WAITING = ['이동호', '김덕원', '김소윤', '임정섭', '곽희도', '정원석', '김민하', '장우진', '조용준', '하지은', '한준규',
   '이우일', '송인하', '이재은', '차효일', '신동빈', '이나연', '성무준', '김민건', '정동영', '김가영', '이주렬', '남예지', '박동영',
   '김재철', '한창기', '황혜진', '정진', '이유정', '김현태', '이효선', '박다한', '소현호', '김현우', '김광환', '박진영'];
-const TOTAL = PEOPLE.length + WAITING.length;
+const TOTAL = 52;   // confirmed participants (one guest is intentionally not listed by name)
 // photos sent with the survey (only people who attached one), shrunk to 480px wide
 const PHOTOS = {
   '조현명': ['johm', 640], '조재훈': ['jojh', 535], '심선희': ['simsh', 341], '한성민': ['hansm', 640], '코코아': ['cocoa', 640],
@@ -193,7 +193,7 @@ q.addEventListener('input', apply);
 apply();
 
 document.getElementById('waiting').innerHTML = WAITING.map(n => `<li>${esc(n)}</li>`).join('');
-document.getElementById('waiting-note').textContent = `함께하는 ${TOTAL}명 중 아직 소개글을 보내지 않은 ${WAITING.length}분이에요.`;
+document.getElementById('waiting-note').textContent = `함께하는 ${TOTAL}명 중 아직 소개글을 보내지 않은 분들이에요.`;
 })();
 </script>
 
