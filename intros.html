@@ -105,7 +105,7 @@ footer{font-size:13px;color:var(--ink-soft)}
     <ul class="chips" id="waiting"></ul>
   </section>
 
-  <footer>소개글은 보내주신 그대로 옮겼고, 사진은 보내주신 분만 올렸어요. 받은 순서대로 정리했습니다.</footer>
+  <footer>소개글은 보내주신 그대로 옮겼고, 사진은 보내주신 분만 올렸어요. 카드 순서는 열 때마다 무작위로 바뀌어요.</footer>
 </div>
 
 <script>
@@ -151,7 +151,10 @@ function highlight(html, term) {
   return html.replace(/(<[^>]+>)|([^<]+)/g, (m, tag, text) => tag || text.replace(new RegExp(t, 'gi'), x => `<mark>${x}</mark>`));
 }
 
-const cards = PEOPLE.map((p, i) => {
+// host stays first; everyone else gets a fresh random order on every visit
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const ORDER = [PEOPLE[0], ...shuffle(PEOPLE.slice(1))];
+const cards = ORDER.map((p, i) => {
   const el = document.createElement('article');
   el.className = 'card' + (p.intro.length > 230 ? ' long' : '');
   const av = p.avatar || (p.name.length >= 3 ? p.name.slice(1) : p.name);
