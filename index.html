@@ -38,7 +38,7 @@
     <section class="details shell" id="details"><div class="section-heading"><div><span class="section-kicker">SAVE THE DATE</span><h2>우리, 이때 만나요<span class="pink">!</span></h2></div><p>반가운 얼굴도 새로운 인연도<br>모두 환영해요.</p></div><div class="detail-grid"><article class="detail-card date-card"><span class="card-label">WHEN / 언제</span><div class="date-big">11<span>.</span>27 <small>FRI</small></div><p>2026년 11월 27일 금요일<br><strong>저녁 7시</strong></p><span class="card-art">✳</span></article><article class="detail-card place-card"><span class="card-label">WHERE / 어디서</span><h3>풀문라운자 <small>2층</small></h3><p>서울 성북구 화랑로18길 25<br>상월곡역 4번 출구에서 도보 약 3분</p><a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%ED%99%94%EB%9E%91%EB%A1%9C18%EA%B8%B8%2025" target="_blank" rel="noopener noreferrer">지도에서 길 찾기 ↗</a><span class="place-icon">⌁</span></article></div></section>
     <section class="story"><div class="shell story-inner"><div class="story-mark">✹<br><span>LET'S<br>CONNECT</span></div><div><span class="section-kicker">MORE THAN A PARTY</span><h2>함께여서 더<br>재미있는 연말</h2><p>생일을 축하하려고 모이다 보니 어느새 연말모임이 되었어요. 서로 어떤 사람인지 알아가고, 하고 싶은 이야기도 나눠봐요.</p><div class="story-tags"><span>✦ 새로운 만남</span><span>✦ 자기소개</span><span>✦ 맛있는 식사</span></div></div></div></section>
 <section id="rsvp" class="rsvp shell"><div class="rsvp-head"><div><span class="section-kicker">BEFORE WE MEET</span><h2>만나기 전,<br>조금만 알려주세요<span class="pink">!</span></h2><p>함께하는 분들을 더 잘 알 수 있도록<br>아래 문항을 작성해주세요.</p></div><div class="rsvp-star">✳</div></div>
-<form class="survey" id="survey-form">
+<form class="survey" id="survey-form" onsubmit="if(!window.surveyReady){event.preventDefault();var s=this.querySelector('.survey-status');if(s)s.textContent='이 브라우저에서는 답변을 보낼 수 없어요. 크롬이나 사파리에서 이 페이지를 다시 열어주세요. (카카오톡: 오른쪽 위 메뉴 → 다른 브라우저로 열기)';}">
   <div class="survey-intro"><span>HELLO, NICE TO MEET YOU</span><p>편한 마음으로 작성해주세요 ✳</p></div>
   <div class="survey-group"><small>01 · ABOUT YOU</small><h3>먼저, 누구신가요?</h3><p>답변을 보내주신 분을 알아볼 수 있도록 성함을 알려주세요.</p></div>
   <div class="survey-item"><label for="guest-name"><span class="survey-num">01</span> 성함을 알려주세요</label><input id="guest-name" name="name" autocomplete="name" required maxlength="100" placeholder="이름을 입력해주세요"></div>
@@ -55,7 +55,7 @@
   <div class="survey-group"><small>06 · CONVERSATION</small><h3>김익수 대표님과 식사하며 대화하기</h3><p>환경일보 김익수 대표님과 이야기를 나누고 싶은 분들을 위해 식사 자리를 준비해요.</p></div>
   <fieldset class="survey-item"><legend><span class="survey-num">07</span> 김익수 대표님과 함께 식사하며 대화하고 싶으신가요?</legend><p>대화를 원하시는 분들이 돌아가며 환경일보 김익수 대표님과 함께 식사하고 이야기할 예정이에요.</p><div class="choices"><label><input type="radio" name="conversation" value="yes"> 함께 이야기하고 싶어요</label><label><input type="radio" name="conversation" value="no"> 같은 테이블에서 식사하지 않아도 돼요</label></div></fieldset>
   <p class="survey-privacy">보내주신 답변과 파일은 모임 준비를 위해 사용하며, 소개글과 사진은 참가자 소개 페이지에 공유될 수 있어요.</p>
-  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input class="hp" type="text" name="hp_check_x" id="hp_check_x" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
   <button class="button primary survey-submit" type="submit">답변 보내기 <span>↗</span></button><p class="survey-status" role="status" aria-live="polite"></p>
 </form></section>
 
@@ -72,7 +72,12 @@ const answerOptions = {
   meal:{vegan:'비건 메뉴만 먹을 수 있어요.',any:'고기가 있어도 상관 없어요.'},
   conversation:{yes:'김익수 대표님과 식사하며, 이야기를 하고 싶습니다.',no:'꼭 같은 테이블에서 함께 식사하지 않아도 됩니다.'}
 };
-let requestId = crypto.randomUUID();
+function makeId() {
+  try { if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID(); } catch (e) {}
+  var h = ''; for (var i = 0; i < 32; i++) h += Math.floor(Math.random() * 16).toString(16);
+  return h.slice(0,8) + '-' + h.slice(8,12) + '-4' + h.slice(13,16) + '-' + h.slice(16,20) + '-' + h.slice(20,32);
+}
+let requestId = makeId();
 function fileData(input) {
   const file = input.files[0];
   if (!file) return Promise.resolve(null);
@@ -86,7 +91,7 @@ function fileData(input) {
 }
 function checkStatus(id) {
   return new Promise(resolve => {
-    const callback = 'surveyStatus_' + crypto.randomUUID().replaceAll('-','_');
+    const callback = 'surveyStatus_' + makeId().replace(/-/g,'_');
     const script = document.createElement('script');
     const timer = setTimeout(() => done(false), 8000);
     function done(value) { clearTimeout(timer); script.remove(); delete window[callback]; resolve(value); }
@@ -110,7 +115,7 @@ form.addEventListener('submit', async event => {
     const [documentFile,photoFile] = await Promise.all([fileData(form.elements.document),fileData(form.elements.photo)]);
     const payload = {
       requestId, name:String(values.get('name')||'').trim(), intro:String(values.get('intro')||'').trim(),
-      arrival:String(values.get('arrival')||'').trim(), website:String(values.get('website')||''),
+      arrival:String(values.get('arrival')||'').trim(), website:String(values.get('hp_check_x')||''),
       presentation:answerOptions.presentation[values.get('presentation')]||'',
       meal:answerOptions.meal[values.get('meal')]||'',
       conversation:answerOptions.conversation[values.get('conversation')]||'',
@@ -120,14 +125,15 @@ form.addEventListener('submit', async event => {
     const response = await fetch(SURVEY_ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload)});
     let confirmed = false;
     for (let i=0;i<12 && !confirmed;i++) { await pause(3000); confirmed = await checkStatus(requestId); }
-    if (!confirmed) throw new Error('저장 여부를 확인하지 못했어요. 같은 내용을 다시 보내면 중복 접수를 막도록 확인합니다.');
+    if (!confirmed) throw new Error('저장 여부를 확인하지 못했어요. 잠시 후 한 번 더 보내주세요(중복 접수는 자동으로 막아요). 카카오톡 안에서 열었다면 오른쪽 위 메뉴의 ‘다른 브라우저로 열기’로 크롬이나 사파리에서 다시 시도해주세요.');
     statusText.textContent = '답변이 안전하게 접수됐어요. 모임에서 만나요!';
     form.reset();
-    requestId = crypto.randomUUID();
+    requestId = makeId();
   } catch (error) {
     statusText.textContent = error.message || '전송하지 못했어요. 잠시 후 다시 시도해주세요.';
   } finally { button.disabled = false; }
 });
 
+window.surveyReady = true;
 </script>
 </body></html>
